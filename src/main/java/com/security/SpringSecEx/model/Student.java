@@ -1,19 +1,19 @@
-package com.security.SpringSecEx.dto;
+package com.security.SpringSecEx.model;
 
 /**
  * @author : Gathsara
  * created : 3/4/2025 -- 3:25 PM
  **/
 
-public class StudentDTO {
+public class Student {
     private int id;
     private String name;
     private int marks;
 
-    public StudentDTO() {
+    public Student() {
     }
 
-    public StudentDTO(int id, String name, int marks) {
+    public Student(int id, String name, int marks) {
         this.id = id;
         this.name = name;
         this.marks = marks;
