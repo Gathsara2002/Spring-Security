@@ -1,6 +1,8 @@
 package com.security.SpringSecEx.controller;
 
 import com.security.SpringSecEx.dto.StudentDTO;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -36,5 +38,11 @@ public class StudentController {
     public StudentDTO saveStudent(@RequestBody StudentDTO studentDTO) {
         students.add(studentDTO);
         return studentDTO;
+    }
+
+    //get csrf token
+    @GetMapping("/csrf-token")
+    public CsrfToken getCsrfToken(HttpServletRequest request){
+        return (CsrfToken) request.getAttribute("_csrf");
     }
 }
